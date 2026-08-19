@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { useSelector } from "react-redux";
-import { chatWithAI } from "../../features/chat/chatAPI";
+import { chatWithAI } from "../../features/chat/chatApi";
 
 const ChatInput = ({ loadMessages, loadConversations }) => {
   const [message, setMessage] = useState("");

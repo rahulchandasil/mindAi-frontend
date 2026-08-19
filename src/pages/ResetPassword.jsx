@@ -9,7 +9,7 @@ import {
   resetPasswordFailure,
 } from "../features/auth/authSlice";
 
-import { resetPassword } from "../features/auth/authAPI";
+import { resetPassword } from "../features/auth/authApi";
 
 const ResetPassword = () => {
   const { token } = useParams();

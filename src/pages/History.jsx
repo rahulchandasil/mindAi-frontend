@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { getConversations } from "../features/conversation/conversationAPI";
+import { getConversations } from "../features/conversation/conversationApi";
 import MainLayout from "../components/layout/MainLayout";
 
 const History = () => {

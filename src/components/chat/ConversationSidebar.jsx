@@ -13,7 +13,7 @@ import {
   getConversations,
   createConversation,
   getConversationById,
-} from "../../features/conversation/conversationAPI";
+} from "../../features/conversation/conversationApi";
 
 const ConversationSidebar = () => {
   const dispatch = useDispatch();

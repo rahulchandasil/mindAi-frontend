@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { loginSuccess, loginFailure } from "../features/auth/authSlice";
-import { getProfile } from "../features/auth/authAPI";
+import { getProfile } from "../features/auth/authApi";
 
 const GoogleSuccess = () => {
   const location = useLocation();

@@ -1,6 +1,6 @@
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
-import { registerUser } from "../features/auth/authAPI";
+import { registerUser } from "../features/auth/authApi";
 
 const Register = () => {
   const navigate = useNavigate();

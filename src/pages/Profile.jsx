@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { getProfile } from "../features/auth/authAPI";
+import { getProfile } from "../features/auth/authApi";
 import MainLayout from "../components/layout/MainLayout";
 
 const Profile = () => {

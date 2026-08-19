@@ -8,7 +8,7 @@ import {
   loginSuccess,
   loginFailure,
 } from "../features/auth/authSlice";
-import { loginUser } from "../features/auth/authAPI";
+import { loginUser } from "../features/auth/authApi";
 
 const Login = () => {
   const dispatch = useDispatch();

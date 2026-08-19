@@ -7,7 +7,7 @@ import ConversationSidebar from "../components/chat/ConversationSidebar";
 import MessageList from "../components/chat/MessageList";
 import ChatInput from "../components/chat/ChatInput";
 
-import { getMessages } from "../features/message/messageAPI";
+import { getMessages } from "../features/message/messageApi";
 import {
   setMessages,
   setLoading,
@@ -16,7 +16,7 @@ import {
 
 import {
   getConversations,
-} from "../features/conversation/conversationAPI";
+} from "../features/conversation/conversationApi";
 
 import {
   setConversations,
