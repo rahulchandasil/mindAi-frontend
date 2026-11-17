@@ -1,72 +1,62 @@
-# 🧠 MindAI — Backend REST API
+# 🧠 MindAI — AI Assistant & Conversational Web App (Frontend)
 
-A scalable, production-deployed **Node.js & Express** backend powering **MindAI**, a full-stack AI assistant and conversational web application. Built for reliability in production environments, this API handles user authentication, persistent MongoDB-backed session management (`connect-mongo`), chat history persistence, and AI model integration.
+A modern, responsive **React + Vite** frontend for **MindAI**, a full-stack AI conversational assistant. Designed for clean real-time user interaction, it enables users to sign in securely, submit prompts, view structured AI responses, and manage persistent conversation threads seamlessly across sessions.
 
-🌐 **Live Frontend App:** [https://mind-ai-frontend-snowy.vercel.app/](https://mind-ai-frontend-snowy.vercel.app/)  
-🚀 **Live Backend API:** [https://mindai-backend-sdpi.onrender.com](https://mindai-backend-sdpi.onrender.com)
+🌐 **Live Demo:** [https://vercel.app](https://vercel.app)  
+⚙️ **Backend Repository:** [mindAi-backend](https://github.com)
 
 ---
 
-## ✨ Key Backend Features
+## ✨ Key Frontend Features
 
-- **AI Prompt & Chat Processing:** Handles real-time user prompts, context formatting, and structured responses from LLM APIs.
-- **Production Session Management:** Uses **`connect-mongo`** to store sessions persistently in MongoDB (preventing `MemoryStore` leaks in production).
-- **Authentication & User Security:** Secure user registration, login, password hashing (`bcryptjs`), and protected API middleware.
-- **Conversation & History Persistence:** Stores and retrieves user chat threads and prompt history cleanly in MongoDB.
-- **Cross-Origin Production Setup:** Configured CORS and cookie/session policies for seamless communication with the Vercel-hosted frontend.
+- **Real-Time AI Chat Interface:** Clean, responsive prompt input and conversational UI for interacting with AI models smoothly.
+- **Persistent Chat History:** Browse, revisit, and continue previous conversation threads synced with the MongoDB backend.
+- **Authentication & Protected Routes:** Secure user registration, login, and session persistence with protected chat views.
+- **Formatted AI Responses:** Clean rendering of AI-generated answers, code blocks, and structured outputs.
+- **Responsive Design:** Optimized for seamless use across desktop, tablet, and mobile screens.
 
 ---
 
 ## 🛠️ Tech Stack
 
-- **Runtime & Framework:** Node.js, Express.js
-- **Database & Session Store:** MongoDB, Mongoose ODM, `connect-mongo`
-- **AI Integration:** LLM / Generative AI REST API
-- **Security & Middleware:** `express-session` / JWT, `bcryptjs`, `cors`, `dotenv`
-- **Deployment:** Render Cloud
+- **Frontend Framework:** React.js (Vite)
+- **Routing:** React Router DOM
+- **Styling:** Tailwind CSS / CSS3
+- **API Integration:** Axios (with credentials/session support connected to Node.js & Express backend)
+- **Deployment:** Vercel
 
 ---
 
 ## 📂 Project Structure
 
 ```text
-mindAi-backend/
+mindAi-frontend/
+├── public/                 # Static assets & icons
 ├── src/
-│   ├── config/         # MongoDB & AI service configurations
-│   ├── controllers/    # Route handlers (Auth, AI Chat, History)
-│   ├── middleware/     # Authentication & error-handling middleware
-│   ├── models/         # Mongoose schemas (User, Chat/Conversation)
-│   └── routes/         # Express API endpoint definitions
-├── .gitignore
+│   ├── assets/             # UI media & branding
+│   ├── components/         # Reusable components (ChatWindow, Sidebar, MessageBubble, Navbar)
+│   ├── context/            # Global state management (Auth & Chat state)
+│   ├── pages/              # Login, Register, AI Chat Dashboard
+│   ├── services/           # Axios API client & endpoint calls
+│   ├── App.jsx             # Main application routing
+│   └── main.jsx            # Entry point
+├── index.html
 ├── package.json
-└── server.js           # Application entry point & session store setup
+└── vite.config.js
 ```
 
 ---
 
-## 🔌 Core API Endpoints
-
-| Method | Endpoint | Description | Access |
-| :--- | :--- | :--- | :--- |
-| `POST` | `/api/auth/register` | Register a new user account | Public |
-| `POST` | `/api/auth/login` | Authenticate user & initialize persistent session | Public |
-| `POST` | `/api/auth/logout` | Destroy active user session | Authenticated |
-| `POST` | `/api/ai/chat` | Send prompt to AI model and receive response | Authenticated |
-| `GET` | `/api/ai/history` | Retrieve saved user conversation history | Authenticated |
-
----
-
-## 🚀 Run Locally
+## 🚀 Getting Started Locally
 
 ### Prerequisites
 - Node.js (v18 or higher)
-- MongoDB Atlas URI
-- AI Provider API Key
+- Running instance of [mindAi-backend](https://github.com)
 
 ### 1. Clone the Repository
 ```bash
 git clone https://github.com
-cd mindAi-backend
+cd mindAi-frontend
 ```
 
 ### 2. Install Dependencies
@@ -75,21 +65,22 @@ npm install
 ```
 
 ### 3. Configure Environment Variables
-Create a `.env` file in the root directory:
-env
-PORT=5000
-MONGO_URI=your_mongodb_connection_string
-SESSION_SECRET=your_session_or_jwt_secret
-AI_API_KEY=your_ai_provider_api_key
-CLIENT_URL=http://localhost:5173
+Create a `.env` file in the root directory and add your backend API URL:
+```env
+VITE_API_URL=http://localhost:5000/api
+```
 
-
-### 4. Start the Server
-bash
-npm start
-# Or for development with nodemon:
+### 4. Start the Development Server
+```bash
 npm run dev
+```
+Open [http://localhost:5173](http://localhost:5173) in your browser to view the app.
 
+---
+
+## 📸 Screenshots
+
+*(Drag and drop 1–2 screenshots of your live MindAI chat interface right here in the GitHub editor!)*
 
 ---
 
